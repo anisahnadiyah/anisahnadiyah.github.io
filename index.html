@@ -1,0 +1,2631 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Melihat hubungan ekspor dan nilai tukar</title>
+    <style>
+      body {
+        font-family: Cambria;
+        font-size: 12pt;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0pt 0pt 10pt;
+      }
+
+      li,
+      table {
+        margin-top: 0pt;
+        margin-bottom: 10pt;
+      }
+
+      h1 {
+        margin-top: 24pt;
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 16pt;
+        font-weight: bold;
+        color: #4f81bd;
+      }
+
+      h2 {
+        margin-top: 10pt;
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 14pt;
+        font-weight: bold;
+        color: #4f81bd;
+      }
+
+      h3 {
+        margin-top: 10pt;
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 12pt;
+        font-weight: bold;
+        color: #4f81bd;
+      }
+
+      h4 {
+        margin-top: 10pt;
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 12pt;
+        font-weight: normal;
+        font-style: italic;
+        color: #4f81bd;
+      }
+
+      h5 {
+        margin-top: 10pt;
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 12pt;
+        font-weight: normal;
+        color: #4f81bd;
+      }
+
+      h6 {
+        margin-top: 10pt;
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 12pt;
+        font-weight: normal;
+        font-style: normal;
+        color: #4f81bd;
+      }
+
+      .Heading7 {
+        margin-top: 10pt;
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 12pt;
+        font-weight: normal;
+        font-style: normal;
+        color: #4f81bd;
+      }
+
+      .Heading8 {
+        margin-top: 10pt;
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 12pt;
+        font-weight: normal;
+        color: #4f81bd;
+      }
+
+      .Heading9 {
+        margin-top: 10pt;
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 12pt;
+        font-weight: normal;
+        font-style: normal;
+        color: #4f81bd;
+      }
+
+      .Abstract {
+        margin-top: 15pt;
+        margin-bottom: 15pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-size: 10pt;
+      }
+
+      .Author {
+        margin-bottom: 10pt;
+        text-align: center;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-size: 12pt;
+      }
+
+      .Bibliography {
+        margin-bottom: 10pt;
+        font-size: 12pt;
+      }
+
+      .BlockText {
+        margin: 5pt 24pt;
+        font-size: 12pt;
+      }
+
+      .BodyText {
+        margin-top: 9pt;
+        margin-bottom: 9pt;
+        font-size: 12pt;
+      }
+
+      .Caption {
+        margin-bottom: 6pt;
+        font-size: 12pt;
+        font-style: italic;
+      }
+
+      .CaptionedFigure {
+        margin-bottom: 10pt;
+        page-break-after: avoid;
+        font-size: 12pt;
+      }
+
+      .Compact {
+        margin-top: 1.8pt;
+        margin-bottom: 1.8pt;
+        font-size: 12pt;
+      }
+
+      .Date {
+        margin-bottom: 10pt;
+        text-align: center;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-size: 12pt;
+      }
+
+      .Definition {
+        margin-bottom: 10pt;
+        font-size: 12pt;
+      }
+
+      .DefinitionTerm {
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-size: 12pt;
+        font-weight: bold;
+      }
+
+      .Figure {
+        margin-bottom: 10pt;
+        font-size: 12pt;
+      }
+
+      .FirstParagraph {
+        margin-top: 9pt;
+        margin-bottom: 9pt;
+        font-size: 12pt;
+      }
+
+      .FootnoteText {
+        margin-bottom: 10pt;
+        font-size: 12pt;
+      }
+
+      .HTMLPreformatted {
+        margin-bottom: 0pt;
+        font-family: 'Courier New';
+        font-size: 10pt;
+      }
+
+      .ImageCaption {
+        margin-bottom: 6pt;
+        font-size: 12pt;
+        font-style: italic;
+      }
+
+      .NormalWeb {
+        margin-top: 5pt;
+        margin-bottom: 5pt;
+        font-family: 'Times New Roman';
+        font-size: 12pt;
+      }
+
+      .SourceCode {
+        margin-bottom: 10pt;
+        font-size: 12pt;
+        background-color: #f1f3f5;
+      }
+
+      .Subtitle {
+        margin-top: 12pt;
+        margin-bottom: 12pt;
+        text-align: center;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 15pt;
+        font-weight: bold;
+        color: #345a8a;
+      }
+
+      .TOCHeading {
+        margin-top: 12pt;
+        margin-bottom: 0pt;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        line-height: 108%;
+        font-family: Calibri;
+        font-size: 16pt;
+        font-weight: normal;
+        color: #365f91;
+      }
+
+      .TableCaption {
+        margin-bottom: 6pt;
+        page-break-after: avoid;
+        font-size: 12pt;
+        font-style: italic;
+      }
+
+      .Title {
+        margin-top: 24pt;
+        margin-bottom: 12pt;
+        text-align: center;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        font-family: Calibri;
+        font-size: 18pt;
+        font-weight: bold;
+        color: #345a8a;
+      }
+
+      .date0 {
+        margin-top: 5pt;
+        margin-bottom: 5pt;
+        font-family: 'Times New Roman';
+        font-size: 12pt;
+      }
+
+      span.AlertTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #ad0000;
+        background-color: #f1f3f5;
+      }
+
+      span.AnnotationTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #5e5e5e;
+        background-color: #f1f3f5;
+      }
+
+      span.AttributeTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #657422;
+        background-color: #f1f3f5;
+      }
+
+      span.BaseNTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #ad0000;
+        background-color: #f1f3f5;
+      }
+
+      span.BuiltInTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #003b4f;
+        background-color: #f1f3f5;
+      }
+
+      span.CharTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #20794d;
+        background-color: #f1f3f5;
+      }
+
+      span.CommentTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #5e5e5e;
+        background-color: #f1f3f5;
+      }
+
+      span.CommentVarTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        font-style: italic;
+        color: #5e5e5e;
+        background-color: #f1f3f5;
+      }
+
+      span.ConstantTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #8f5902;
+        background-color: #f1f3f5;
+      }
+
+      span.ControlFlowTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #003b4f;
+        background-color: #f1f3f5;
+      }
+
+      span.DataTypeTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #ad0000;
+        background-color: #f1f3f5;
+      }
+
+      span.DecValTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #ad0000;
+        background-color: #f1f3f5;
+      }
+
+      span.DocumentationTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        font-style: italic;
+        color: #5e5e5e;
+        background-color: #f1f3f5;
+      }
+
+      span.ErrorTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #ad0000;
+        background-color: #f1f3f5;
+      }
+
+      span.ExtensionTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #003b4f;
+        background-color: #f1f3f5;
+      }
+
+      span.FloatTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #ad0000;
+        background-color: #f1f3f5;
+      }
+
+      span.FootnoteReference {
+        vertical-align: super;
+      }
+
+      span.FunctionTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #4758ab;
+        background-color: #f1f3f5;
+      }
+
+      span.HTMLPreformattedChar {
+        font-family: 'Courier New';
+        font-size: 10pt;
+      }
+
+      span.Hyperlink {
+        text-decoration: none;
+        color: #4f81bd;
+      }
+
+      span.ImportTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #00769e;
+        background-color: #f1f3f5;
+      }
+
+      span.InformationTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #5e5e5e;
+        background-color: #f1f3f5;
+      }
+
+      span.KeywordTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #003b4f;
+        background-color: #f1f3f5;
+      }
+
+      span.NormalTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #003b4f;
+        background-color: #f1f3f5;
+      }
+
+      span.OperatorTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #5e5e5e;
+        background-color: #f1f3f5;
+      }
+
+      span.OtherTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #003b4f;
+        background-color: #f1f3f5;
+      }
+
+      span.PreprocessorTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #ad0000;
+        background-color: #f1f3f5;
+      }
+
+      span.RegionMarkerTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #003b4f;
+        background-color: #f1f3f5;
+      }
+
+      span.SpecialCharTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #5e5e5e;
+        background-color: #f1f3f5;
+      }
+
+      span.SpecialStringTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #20794d;
+        background-color: #f1f3f5;
+      }
+
+      span.StringTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #20794d;
+        background-color: #f1f3f5;
+      }
+
+      span.UnresolvedMention {
+        color: #605e5c;
+        background-color: #e1dfdd;
+      }
+
+      span.VariableTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #111111;
+        background-color: #f1f3f5;
+      }
+
+      span.VerbatimChar {
+        font-family: Consolas;
+        font-size: 11pt;
+      }
+
+      span.VerbatimStringTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        color: #20794d;
+        background-color: #f1f3f5;
+      }
+
+      span.WarningTok {
+        font-family: Consolas;
+        font-size: 11pt;
+        font-style: italic;
+        color: #5e5e5e;
+        background-color: #f1f3f5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="Title">
+      <a id="_Hlk156745602"></a>Pengaruh Ekspor Impor Terhadap Pertumbuhan
+      Ekonomi Tahun 1999-2020 Di Indonesia
+    </p>
+    <p class="Subtitle">Metode Penelitian Politeknik APP Jakarta</p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 104.9pt">
+      &nbsp;
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 104.9pt;
+        margin-bottom: 0pt;
+        text-align: center;
+        font-size: 11pt;
+      "
+    >
+      <strong
+        ><span style="font-family: Calibri; text-transform: uppercase"
+          >AUTHOR</span
+        ></strong
+      >
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 104.9pt;
+        margin-bottom: 1.2pt;
+        text-align: center;
+        font-size: 14pt;
+      "
+    >
+      <span style="font-family: Calibri">Anisah Nadiyah Ananda</span>
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 104.9pt;
+        margin-bottom: 1.2pt;
+        text-align: center;
+        font-size: 14pt;
+      "
+    >
+      <span style="font-family: Calibri">&nbsp;</span>
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 104.9pt;
+        margin-bottom: 0pt;
+        text-align: center;
+        font-size: 11pt;
+      "
+    >
+      <strong
+        ><span style="font-family: Calibri; text-transform: uppercase"
+          >PUBLISHED</span
+        ></strong
+      >
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 104.9pt;
+        margin-bottom: 1.2pt;
+        text-align: center;
+        font-size: 14pt;
+      "
+    >
+      <span style="font-family: Calibri">January 21, 2024</span>
+    </p>
+    <p class="BodyText">&nbsp;</p>
+    <p class="BodyText">&nbsp;</p>
+    <p style="text-align: center">
+      <img
+        src="https://myfiles.space/user_files/temporary/65ad1d8c8db1d3.29678601/1705844107_index/1705844107_index-1.jpeg"
+        width="500"
+        height="500"
+        alt=""
+      />
+    </p>
+    <h2 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="pendahuluan">1 Pendahuluan</a>
+    </h2>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="latar-belakang">1.1 Latar belakang</a>
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="ruang-lingkup"
+        ><span style="font-family: Cambria; font-weight: normal; color: #000000"
+          >Perkembangan ekonomi suatu negara pada masa kini tidak dapat
+          dilepaskan dari keadaan ekonomi global. Hubungan ekonomi antar negara
+          menjadi faktor kunci yang memengaruhi pertumbuhan ekonomi
+          masing-masing negara. Situasi ini menyebabkan persaingan menjadi salah
+          satu elemen penentu dalam kompetisi antar negara untuk mendapatkan
+          keuntungan dari liberalisasi ekonomi global. Manfaat dari liberalisasi
+          ekonomi dunia dapat tercermin dalam neraca pembayaran suatu
+          negara.</span
+        ></a
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span style="font-family: Cambria; font-weight: normal; color: #000000"
+        >&nbsp;</span
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span style="font-family: Cambria; font-weight: normal; color: #000000"
+        >Menurut Bank Indonesia, neraca pembayaran mencatat transaksi ekonomi
+        antara penduduk Indonesia dan non-penduduk selama periode tertentu.
+        Suatu negara dianggap memiliki neraca pembayaran surplus jika memiliki
+        kelebihan dana dari perdagangan dan investasi dibandingkan dengan
+        kewajiban yang dibayarkan kepada negara lain, sedangkan defisit terjadi
+        ketika impor melebihi ekspor. Kondisi neraca pembayaran yang surplus
+        atau defisit dapat memengaruhi pertumbuhan ekonomi Indonesia.</span
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span style="font-family: Cambria; font-weight: normal; color: #000000"
+        >&nbsp;</span
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span style="font-family: Cambria; font-weight: normal; color: #000000"
+        >Hubungan antara perdagangan internasional dan pertumbuhan ekonomi
+        merupakan topik yang sering dibahas dalam bidang ekonomi, walaupun masih
+        menimbulkan kontroversi. Berkembangnya literatur tentang pertumbuhan
+        endogen memberikan peran lebih besar bagi keterbukaan eksternal
+        negara-negara dalam proses perkembangan teknologi, dibandingkan dengan
+        model pertumbuhan Solow yang tradisional. Pendekatan baru ini menekankan
+        bahwa inovasi teknologi muncul sebagai respons terhadap insentif
+        ekonomi, di mana faktor-faktor seperti lingkungan kelembagaan, hukum,
+        keterbukaan, dan integrasi ekonomi memengaruhi kecepatan dan arah
+        perubahan teknologi.</span
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span style="font-family: Cambria; font-weight: normal; color: #000000"
+        >&nbsp;</span
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span style="font-family: Cambria; font-weight: normal; color: #000000"
+        >Di sisi lain, banyak literatur empiris menunjukkan bahwa perdagangan
+        internasional dan kebijakan perdagangan yang lebih terbuka menjadi
+        faktor utama dalam menjelaskan pertumbuhan ekonomi. Todaro dan Smith
+        (2008) menyatakan bahwa pertumbuhan ekonomi dapat diukur dari bagaimana
+        pertumbuhan Produk Domestik Bruto (PDB) regional. Tingginya pertumbuhan
+        ekonomi suatu wilayah diartikan sebagai indikator baiknya kegiatan
+        ekonomi. Peningkatan pertumbuhan ekonomi dapat dicapai melalui laju
+        pertumbuhan PDB pada harga konstan, yang berkaitan dengan proses
+        pembangunan ekonomi.</span
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span style="font-family: Cambria; font-weight: normal; color: #000000"
+        >&nbsp;</span
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span style="font-family: Cambria; font-weight: normal; color: #000000"
+        >Tidak dapat disangkal bahwa pembangunan ekonomi sangat tergantung pada
+        peran sumber daya manusia. Sumber daya manusia atau tenaga kerja menjadi
+        faktor penting yang mendukung kelancaran pembangunan ekonomi suatu
+        wilayah (Santa Wardana, Bagus et al., 2014). Kemajuan ekonomi suatu
+        negara menjadi isu penting dalam debat ekonomi. Negara dapat mempercepat
+        pertumbuhan ekonominya dengan meningkatkan dan mempromosikan ekspor
+        barang dan jasa.</span
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span style="font-family: Cambria; font-weight: normal; color: #000000"
+        >&nbsp;</span
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span style="font-family: Cambria; font-weight: normal; color: #000000"
+        >Ekspor dan impor memainkan peran kunci dalam perdagangan internasional,
+        yang menjadi faktor penting untuk meningkatkan pertumbuhan ekonomi.
+        Ekspor memberikan devisa yang sangat dibutuhkan oleh negara yang
+        memiliki perekonomian terbuka, sementara impor memungkinkan negara untuk
+        memenuhi kebutuhan dalam negeri yang tidak dapat diproduksi secara
+        lokal, mengakibatkan penurunan biaya produksi dan jasa. Studi oleh
+        Febriyanti (2019) menjelaskan secara teoritis bahwa ekspor dan impor
+        secara simultan berpengaruh positif terhadap Produk Domestik Bruto (PDB)
+        Indonesia. Secara parsial, ekspor memiliki pengaruh positif yang lebih
+        dominan terhadap PDB Indonesia, sementara impor memiliki pengaruh
+        negatif secara parsial terhadap PDB Indonesia pada periode
+        2008-2017.</span
+      >
+    </h3>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      1.2 Ruang lingkup
+    </h3>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      Ruang lingkup pembahasan mencakup pengaruh keadaan ekonomi global terhadap
+      perkembangan suatu negara, persaingan dalam kompetisi global untuk
+      mendapatkan keuntungan dari liberalisasi ekonomi, dampak liberalisasi
+      ekonomi dunia pada neraca pembayaran, peran Bank Indonesia dalam mencatat
+      transaksi ekonomi dan implikasinya terhadap pertumbuhan ekonomi Indonesia,
+      perdebatan seputar hubungan perdagangan internasional dan pertumbuhan
+      ekonomi, penerapan model gravitasi dalam perdagangan internasional,
+      analisis pertumbuhan ekonomi melalui pendekatan pertumbuhan endogen dengan
+      fokus pada inovasi teknologi dan faktor-faktor lingkungan, peran krusial
+      sumber daya manusia dalam pembangunan ekonomi, serta dampak ekspor dan
+      impor terhadap pertumbuhan ekonomi Indonesia berdasarkan studi Febriyanti
+      (2019).
+    </p>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="rumusan-masalah">1.3 Rumusan masalah</a>
+    </h3>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      1. Bagaimana hubungan ekonomi antar negara memengaruhi pertumbuhan ekonomi
+      suatu negara dalam konteks liberalisasi ekonomi global?
+    </p>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      2. Apa dampak dari neraca pembayaran surplus atau defisit terhadap
+      pertumbuhan ekonomi Indonesia, dengan mempertimbangkan transaksi ekonomi
+      antara penduduk Indonesia dan non-penduduk serta kebijakan perdagangan
+      yang terbuka?
+    </p>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="tujuan-dan-manfaat-penelitian"
+        >1.4 Tujuan dan manfaat penelitian</a
+      >
+    </h3>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      Tujuan penelitian ini untuk menganalisis dampak hubungan ekonomi antar
+      negara terhadap perkembangan ekonomi suatu negara pada era globalisasi,
+      menilai keterkaitan antara neraca pembayaran suatu negara dengan
+      pertumbuhan ekonomi Indonesia, serta mengevaluasi manfaat liberalisasi
+      ekonomi dunia terhadap neraca pembayaran dan pertumbuhan ekonomi. Selain
+      itu, makalah ini juga bertujuan untuk memahami peran persaingan dalam
+      kompetisi antar negara sebagai elemen penentu dalam mencapai keuntungan
+      dari liberalisasi ekonomi global, mengidentifikasi dampak surplus atau
+      defisit neraca pembayaran terhadap pertumbuhan ekonomi Indonesia, dan
+      menilai relevansi pendekatan baru dalam literatur pertumbuhan endogen
+      terkait keterbukaan eksternal dan pengaruhnya terhadap perkembangan
+      teknologi. Selanjutnya, makalah ini akan mengevaluasi kontribusi
+      perdagangan internasional dan kebijakan perdagangan terbuka terhadap
+      pertumbuhan ekonomi, dengan mempertimbangkan perspektif kontroversial
+      dalam literatur ekonomi. Analisis juga akan difokuskan pada peran sumber
+      daya manusia dalam mendukung pembangunan ekonomi suatu wilayah, menilai
+      isu-isu ekonomi terkini, dan relevansi kemajuan ekonomi dalam debat
+      ekonomi nasional.
+    </p>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="package">1.5 Package</a>
+    </h3>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      Ini tidak wajib ada di packages yang digunakan antara lain sebagai
+      berikut:
+    </p>
+    <p class="SourceCode" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span class="FunctionTok">library</span
+      ><span class="NormalTok">(tidyverse)</span><br /><span class="FunctionTok"
+        >library</span
+      ><span class="NormalTok">(readxl)</span><br /><span class="FunctionTok"
+        >library</span
+      ><span class="NormalTok">(WDI)</span>
+    </p>
+    <h2 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="studi-pustaka">2 Studi pustaka</a>
+    </h2>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      Seiring dengan era globalisasi, literatur ekonomi menegaskan bahwa
+      perkembangan ekonomi suatu negara tidak dapat dipisahkan dari interkoneksi
+      dengan keadaan ekonomi global. Persaingan yang muncul dalam kompetisi
+      antar negara menjadi faktor penentu yang signifikan dalam upaya memperoleh
+      keuntungan dari liberalisasi ekonomi global.
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      &nbsp;
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      Bank Indonesia menyoroti pentingnya neraca pembayaran sebagai instrumen
+      yang mencatat transaksi ekonomi antara penduduk Indonesia dan
+      non-penduduk. Kondisi neraca pembayaran yang mencerminkan surplus atau
+      defisit dapat memiliki dampak yang signifikan terhadap pertumbuhan ekonomi
+      Indonesia. Kelebihan dana dari perdagangan dan investasi, ketika melebihi
+      kewajiban yang dibayarkan kepada negara lain, dapat memberikan kontribusi
+      positif terhadap pertumbuhan ekonomi, sementara defisit menjadi tantangan
+      yang perlu diatasi.
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      &nbsp;
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      Perdagangan internasional dan hubungannya dengan pertumbuhan ekonomi
+      menjadi pusat perhatian dalam literatur ekonomi. Pendekatan baru dalam
+      literatur pertumbuhan endogen menekankan peran keterbukaan eksternal
+      negara dalam mengakomodasi proses perkembangan teknologi. Faktor-faktor
+      seperti lingkungan kelembagaan, hukum, keterbukaan, dan integrasi ekonomi
+      menjadi bagian integral dari pengaruh terhadap kecepatan dan arah
+      perubahan teknologi dalam konteks globalisasi ekonomi.
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      &nbsp;
+    </p>
+    <h2 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="metode-penelitian">3 Metode penelitian</a>
+    </h2>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="data">3.1 Data</a>
+    </h3>
+    <p
+      class="TableCaption"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      <span style="font-style: normal">Berikut</span
+      ><span style="font-style: normal">&nbsp;&nbsp;</span
+      ><span style="font-style: normal">data</span
+      ><span style="font-style: normal">&nbsp;&nbsp;</span
+      ><span style="font-style: normal">perkembangan</span
+      ><span style="font-style: normal">&nbsp;&nbsp;</span
+      ><span style="font-style: normal"
+        >Ekspor, Impor dan Pertumbuhan ekonomi di Indonesia dari tahun
+        1999-2020</span
+      >.
+    </p>
+    <p
+      class="TableCaption"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      &nbsp;
+    </p>
+    <p class="BodyText">&nbsp;</p>
+    <table
+      style="
+        width: 100%;
+        margin-right: 9pt;
+        margin-left: 9pt;
+        margin-bottom: 0pt;
+        border: 0.75pt solid #000000;
+        border-collapse: collapse;
+        float: right;
+      "
+    >
+      <tbody>
+        <tr style="height: 52.05pt">
+          <td
+            style="
+              width: 18.3%;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: middle;
+            "
+          >
+            <p class="BodyText" style="text-align: center">
+              <strong>Tahun</strong>
+            </p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border-right: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">
+              <strong>Pertumbuhan</strong>
+            </p>
+            <p class="BodyText" style="text-align: center">
+              <strong>Ekonomi (%)</strong>
+            </p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-right: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">
+              <strong>Ekspor</strong
+              ><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+            </p>
+            <p class="BodyText" style="text-align: center">
+              <strong>(Juta US$)</strong>
+            </p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">
+              <strong>Impor</strong
+              ><strong
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong
+              >
+            </p>
+            <p class="BodyText" style="text-align: center">
+              <strong>(Juta US$)</strong>
+            </p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">1999</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">0.79</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">48665.5</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">24003.3</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2000</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">4.92</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">62124.0</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">33514.8</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2001</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">3.64</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">56323.1</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">30962.1</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2002</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">4.50</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">57105.8</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">31288.9</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2003</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: middle;
+            "
+          >
+            <p class="BodyText" style="text-align: center">4.78</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">61034.5</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">32550.7</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2004</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">5.03</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">71584.6</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">46524.5</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2005</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">5.69</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">85659.9</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">57700.9</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2006</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">5.50</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">100798.6</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">61065.5</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2007</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">6.35</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">114101.0</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">74473.4</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2008</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">6.01</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">137020.4</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">129197.3</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2009</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">4.63</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">116510.0</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">96829.2</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2010</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">6.22</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">157779.0</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">135663.3</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2011</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">6.17</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">203496.6</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">177435.7</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2012</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">6.03</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">190031.8</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">191691.0</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2013</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">5.56</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">182551.9</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">186628.7</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2014</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">5.01</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">176292.7</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">178178.8</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2015</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">4.88</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">150393.3</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">142694.5</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2016</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">5.03</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">144489.7</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">135652.8</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2017</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">5.07</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">168828.2</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">156985.5</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2018</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">5.17</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">180012.7</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">188711.2</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2019</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">5.02</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">167683.0</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              border-bottom: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">170727.4</p>
+          </td>
+        </tr>
+        <tr style="height: 29.9pt">
+          <td
+            style="
+              width: 18.3%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">2020</p>
+          </td>
+          <td
+            style="
+              width: 34.48%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">5.05</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-right: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">163306.5</p>
+          </td>
+          <td
+            style="
+              width: 23.6%;
+              border-top: 0.75pt solid #000000;
+              border-left: 0.75pt solid #000000;
+              padding-right: 5.03pt;
+              padding-left: 5.03pt;
+              vertical-align: top;
+            "
+          >
+            <p class="BodyText" style="text-align: center">141568.8</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="BodyText" style="margin-left: 102.05pt">&nbsp;</p>
+    <table style="width: 100%; margin-bottom: 0pt; border-collapse: collapse">
+      <tbody>
+        <tr>
+          <td
+            style="
+              padding-right: 5.4pt;
+              padding-left: 5.4pt;
+              vertical-align: top;
+            "
+          >
+            <p class="ImageCaption" style="margin-top: 10pt">
+              <span style="font-style: normal">&nbsp;</span>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      Penelitian ini menggunakan data sekunder dengan bentuk data time series
+      1999-2020, data yang dipakai ialah data yang telah diolah dengan sumber
+      Badan Pusat Statistik Indonesia.
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      &nbsp;
+    </p>
+    <p class="SourceCode" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <span class="FunctionTok">sheet_name &lt;- &apos;Sheet1&apos;</span
+      ><br /><span class="NormalTok">&nbsp;&nbsp;</span
+      ><span class="FunctionTok"
+        >data_excel &lt;- read_excel(path, sheet = sheet_name)</span
+      ><br /><span class="NormalTok">&nbsp;&nbsp;</span
+      ><span class="FunctionTok">head(data_excel)</span>
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        font-size: 10pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="font-family: 'Lucida Console'; color: #949494">&nbsp;</span>
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #949494">A tibble: 10 &times; 4</span>
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      &nbsp;&nbsp; Tahun&nbsp;&nbsp;&nbsp; `%`&nbsp; Ekspor&nbsp;&nbsp; Impor
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      &nbsp;&nbsp; <em><span style="color: #949494">&lt;dbl&gt;</span></em
+      >&nbsp; <em><span style="color: #949494">&lt;dbl&gt;</span></em> &nbsp;
+      <em><span style="color: #949494">&lt;dbl&gt;</span></em> &nbsp;
+      <em><span style="color: #949494">&lt;dbl&gt;</span></em>
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #bcbcbc">&nbsp;</span
+      ><span style="color: #bcbcbc">1</span>&nbsp; <u>1</u>999
+      0.007<u>9</u>&nbsp; <u>48</u>665&nbsp;&nbsp; <u>24</u>003
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #bcbcbc">&nbsp;</span
+      ><span style="color: #bcbcbc">2</span>&nbsp; <u>2</u>000
+      0.049<u>2</u>&nbsp; <u>62</u>124&nbsp;&nbsp; <u>33</u>514
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #bcbcbc">&nbsp;</span
+      ><span style="color: #bcbcbc">3</span>&nbsp; <u>2</u>001
+      0.036<u>4</u>&nbsp; <u>56</u>323&nbsp;&nbsp; <u>30</u>962
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #bcbcbc">&nbsp;</span
+      ><span style="color: #bcbcbc">4</span>&nbsp; <u>2</u>002 0.045&nbsp;&nbsp;
+      <u>57</u>105&nbsp;&nbsp; <u>31</u>288
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #bcbcbc">&nbsp;</span
+      ><span style="color: #bcbcbc">5</span>&nbsp; <u>2</u>003
+      0.047<u>8</u>&nbsp; <u>61</u>034&nbsp;&nbsp; <u>32</u>550
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #bcbcbc">&nbsp;</span
+      ><span style="color: #bcbcbc">6</span>&nbsp; <u>2</u>004
+      0.050<u>3</u>&nbsp; <u>71</u>584&nbsp;&nbsp; <u>46</u>524
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #bcbcbc">&nbsp;</span
+      ><span style="color: #bcbcbc">7</span>&nbsp; <u>2</u>005
+      0.056<u>9</u>&nbsp; <u>85</u>659&nbsp;&nbsp; <u>57</u>700
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #bcbcbc">&nbsp;</span
+      ><span style="color: #bcbcbc">8</span>&nbsp; <u>2</u>006 0.055&nbsp;
+      <u>100</u>799.&nbsp; <u>61</u>065
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #bcbcbc">&nbsp;</span
+      ><span style="color: #bcbcbc">9</span>&nbsp; <u>2</u>007 0.063<u>5</u>
+      <u>114</u>101&nbsp;&nbsp; <u>74</u>473
+    </p>
+    <p
+      style="
+        margin-right: 102.05pt;
+        margin-left: 102.05pt;
+        margin-bottom: 0pt;
+        background-color: #ffffff;
+      "
+    >
+      <span style="color: #bcbcbc">10</span>&nbsp; <u>2</u>008 0.060<u>1</u>
+      <u>137</u>020. <u>129</u>197
+    </p>
+    <p style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt">
+      <span class="FunctionTok" style="background-color: transparent"
+        >&nbsp;</span
+      >
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="FunctionTok"
+        >plot(data_excel$Ekspor, data_excel$Impor, main =
+        &quot;Ekspor-Impor&quot;, cex=3, lwd=3, ylab = &quot;Data Impor&quot;,
+        xlab =&quot;Data Ekspor&quot;)</span
+      >
+    </p>
+    <p style="font-size: 11pt">
+      <span class="FunctionTok" style="background-color: transparent"
+        >&nbsp;</span
+      >
+    </p>
+    <p style="text-align: center">
+      <img
+        src="https://myfiles.space/user_files/temporary/65ad1d8c8db1d3.29678601/1705844107_index/1705844107_index-2.png"
+        width="1076"
+        height="464"
+        alt=""
+      />
+    </p>
+    <p>&nbsp;</p>
+    <table style="width: 100%; margin-bottom: 0pt; border-collapse: collapse">
+      <tbody>
+        <tr>
+          <td
+            style="
+              padding-right: 5.4pt;
+              padding-left: 5.4pt;
+              vertical-align: top;
+            "
+          >
+            <p class="ImageCaption" style="margin-top: 10pt">
+              <a id="fig-mpg"><span style="font-style: normal">&nbsp;</span></a>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="metode-analisis">3.2 Metode analisis</a>
+    </h3>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      Metode yang dipilih adalah regresi univariat atau Ordinary Least Square
+      (OLS) dengan 1 variabel independen. Penelitian ini merbaksud mencari
+      hubungan antara Ekspor dan Impor. Spesifikasi yang dilakukan adalah:
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <img
+        src="https://myfiles.space/user_files/temporary/65ad1d8c8db1d3.29678601/1705844107_index/1705844107_index-3.png"
+        width="134"
+        height="21"
+        alt=""
+      />
+    </p>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      di mana
+      <img
+        src="https://myfiles.space/user_files/temporary/65ad1d8c8db1d3.29678601/1705844107_index/1705844107_index-4.png"
+        width="15"
+        height="21"
+        alt=""
+      />&nbsp;adalah Ekspor dan
+      <img
+        src="https://myfiles.space/user_files/temporary/65ad1d8c8db1d3.29678601/1705844107_index/1705844107_index-5.png"
+        width="14"
+        height="21"
+        alt=""
+      />&nbsp;adalah Impor.
+    </p>
+    <h2 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="pembahasan">4 Pembahasan</a>
+    </h2>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="pembahasan-masalah">4.1 Pembahasan masalah</a>
+    </h3>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      Pertumbuhan ekonomi Indonesia dari tahun 1999 hingga 2020 menunjukkan
+      fluktuasi setiap tahunnya. Pada tahun 1999, pertumbuhan ekonomi mencapai
+      0.79 persen, dipengaruhi oleh krisis ekonomi. Secara rata-rata,
+      pertumbuhan ekonomi dari tahun 1999 hingga 2020 mencapai 5.04 persen.
+      Namun, terdapat ketidakstabilan, terutama pada tahun 2009, di mana
+      pertumbuhan ekonomi Indonesia mengalami penurunan drastis.
+    </p>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      &nbsp;
+    </p>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      Selain itu, pada tahun 2009, nilai ekspor dan impor Indonesia juga
+      mengalami penurunan, yang kemungkinan dipengaruhi oleh perubahan dalam
+      ekspor, impor, dan faktor lainnya. Ekspor Indonesia dari tahun 1999 hingga
+      2020 menunjukkan fluktuasi, dengan puncak pada tahun 2005 sebesar US$
+      85.659,9 juta, penurunan pada tahun 2009 menjadi US$ 116.510 juta, dan
+      lonjakan pada tahun 2018 mencapai US$ 180.012,7 juta. Pada tahun 2019
+      hingga 2020, ekspor kembali mengalami penurunan menjadi US$ 163,306.5
+      juta.
+    </p>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      &nbsp;
+    </p>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      Ekspor dianggap sebagai pendorong pertumbuhan ekonomi; namun, data
+      menunjukkan bahwa meskipun ekspor meningkat pada tahun 2007, pertumbuhan
+      ekonomi mengalami penurunan signifikan pada tahun 2009 sebesar 4,63
+      persen. Selain itu, impor juga mengalami fluktuasi, mencapai puncak
+      tertinggi pada tahun 2012 dengan nilai US$ 191.691 juta, sementara titik
+      terendah terjadi pada tahun 1999 dengan nilai US$ 24.003,3 juta.
+    </p>
+    <h3 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="analisis-masalah">4.2 Analisis masalah</a>
+    </h3>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      Hasil regresinya adalah
+    </p>
+    <p class="SourceCode" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <br /><span class="FunctionTok"
+        >&gt; summary(lm(Ekspor~Impor, data=data_excel))</span
+      >
+    </p>
+    <p class="SourceCode" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <br /><a id="kesimpulan"><span class="VerbatimChar">Call:</span></a>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar"
+        >lm(formula = Ekspor ~ Impor, data = data_excel)</span
+      >
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">Residuals:</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">&nbsp;&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">Min</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">1Q Median</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">3Q</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">Max&nbsp;</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">-11305</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">-5869</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">-3353</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">2974</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">21403&nbsp;</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">&nbsp;</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">Coefficients:</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">Estimate Std. Error t value Pr(&gt;|t|)</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">(Intercept) 3.695e+04</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">4.042e+03</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">9.141</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">1.4e-08 ***</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">Impor</span
+      ><span class="VerbatimChar"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">8.180e-01</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">3.219e-02</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">25.415</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">&lt; 2e-16 ***</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">---</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">Signif. codes:</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar"
+        >0 &lsquo;***&rsquo; 0.001 &lsquo;**&rsquo; 0.01 &lsquo;*&rsquo; 0.05
+        &lsquo;.&rsquo; 0.1 &lsquo; &rsquo; 1</span
+      >
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">&nbsp;</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar"
+        >Residual standard error: 9096 on 20 degrees of freedom</span
+      >
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">Multiple R-squared:</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">0.97,</span
+      ><span
+        style="width: 22.66pt; font-family: Consolas; display: inline-block"
+        >&nbsp;</span
+      ><span class="VerbatimChar">Adjusted R-squared:</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">0.9685&nbsp;</span>
+    </p>
+    <p
+      class="SourceCode"
+      style="margin-right: 102.05pt; margin-left: 102.05pt; font-size: 11pt"
+    >
+      <span class="VerbatimChar">F-statistic: 645.9 on 1 and 20 DF,</span
+      ><span class="VerbatimChar">&nbsp;&nbsp;</span
+      ><span class="VerbatimChar">p-value: &lt; 2.2e-16</span>
+    </p>
+    <h2 style="margin-right: 102.05pt; margin-left: 102.05pt">5 Kesimpulan</h2>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      Kesimpulan dari pembahasan makalah ini adalah bahwa pertumbuhan ekonomi
+      Indonesia dari tahun 1999 hingga 2020 mengalami fluktuasi yang dipengaruhi
+      oleh faktor-faktor seperti krisis ekonomi global, hubungan ekonomi antar
+      negara, dan perubahan dalam neraca pembayaran. Ekspor dan impor memainkan
+      peran kunci dalam dinamika ekonomi Indonesia, dengan ekspor dianggap
+      sebagai pendorong pertumbuhan, meskipun terdapat tantangan seperti
+      penurunan signifikan pada tahun 2009. Neraca pembayaran yang surplus atau
+      defisit juga memengaruhi pertumbuhan ekonomi, dan keterbukaan ekonomi
+      terhadap perdagangan internasional menjadi faktor penting dalam literatur
+      ekonomi. Selain itu, pertumbuhan ekonomi juga dipengaruhi oleh
+      faktor-faktor seperti inovasi teknologi, kebijakan perdagangan yang lebih
+      terbuka, dan peran sumber daya manusia.
+    </p>
+    <h2 style="margin-right: 102.05pt; margin-left: 102.05pt">
+      <a id="referensi">6 Referensi</a>
+    </h2>
+    <p
+      class="FirstParagraph"
+      style="margin-right: 102.05pt; margin-left: 102.05pt"
+    >
+      Siti Hodijah &amp; Grace Patricia Angelina. (2022). ANALISIS PENGARUH
+      EKSPOR DAN IMPOR TERHADAP PERTUMBUHAN EKONOMI DI INDONESIA. Universitas
+      Jambi.
+      <a
+        href="https://online-journal.unja.ac.id/mankeu/article/view/12512/10911"
+        style="text-decoration: none"
+        ><span class="Hyperlink"
+          >https://online-journal.unja.ac.id/mankeu/article/view/12512/10911</span
+        ></a
+      >.
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      &nbsp;
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      Ismadiyanti Purwaning Astuti, Fitri Juniwati Ayuningtyas. (2018). PENGARUH
+      EKSPOR DAN IMPOR TERHADAP PERTUMBUHAN EKONOMI DI INDONESIA. Universitas
+      Amikom Yogyakarta.
+      <a
+        href="https://journal.umy.ac.id/index.php/esp/article/view/3836/3566"
+        style="text-decoration: none"
+        ><span class="Hyperlink"
+          >https://journal.umy.ac.id/index.php/esp/article/view/3836/3566</span
+        ></a
+      >.
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      &nbsp;
+    </p>
+    <p class="BodyText" style="margin-right: 102.05pt; margin-left: 102.05pt">
+      &nbsp;
+    </p>
+    <p class="BodyText">&nbsp;</p>
+    <p style="bottom: 10px; right: 10px; position: absolute">
+      <a
+        href="https://wordtohtml.net"
+        target="_blank"
+        style="font-size: 11px; color: #d0d0d0"
+        >Converted to HTML with WordToHTML.net</a
+      >
+    </p>
+  </body>
+</html>
